@@ -1,3 +1,8 @@
+### Tips
+1.	If the code is html, place the code inside an echo. 
+2.	If the code is php, do not put it in an echo.
+3.	For page navigation to work, your data entry controls and button must be inside a form.
+
 ### Concat strings
 ```
 $Answer = "this" . "that"; // Produces "thisthat"
