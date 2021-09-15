@@ -1,5 +1,7 @@
 <?php
 // Everything that has to be displayed on  a page has to be in an echo container
+
+// Function add headers below
 echo "
 <!doctype html> 
 <html lang = \"en\">
@@ -9,6 +11,8 @@ echo "
 </head>
 <body>     
 <h1>Heading One</h1>\n";
+// Add headers ^
+
 // '\n' is used for debugging, as it separates html elements with a new line
 $animalName = $_POST["f_AnimalName"];
 $animalType = $_POST["f_AnimalType"];
