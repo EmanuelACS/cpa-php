@@ -123,11 +123,11 @@ else
 
 // Image & Button testing
 echo "</br></br>\n";
-DisplayImage("favicon.ico", "Favicon");
-DisplayImage("favicon.ico", "Favicon", 200, 200);
+DisplayImage("pink.PNG", "Favicon");
+DisplayImage("pink.PNG", "Favicon", 200, 200);
 echo "</br></br>\n";
-DisplayButton(true, "favicon.ico", "Favicon");
-DisplayButton(true, "favicon.ico", "Favicon", "", "", 200, 200);
+DisplayButton(true, "pink.PNG", "Favicon");
+DisplayButton(true, "pink.PNG", "Favicon", "", "", 200, 200);
 echo "</br></br>\n";
 DisplayButton(false, "", "", "fav-1", "Label A");
 DisplayButton(false, "", "", "fav-2", "Label B");
