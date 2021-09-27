@@ -52,9 +52,9 @@ function CalculateTotal($Price, $NumCopies) {
     $Tax = $Subtotal * 0.13;
     $Total = $Subtotal + $Tax;
 
-    echo "<p>Subtotal: " . number_format($Subtotal, 2) . "<p>";
-    echo "<p>Tax Amount: " . number_format($Tax, 2) . "<p>";
-    echo "<p>Total: " . number_format($Total, 2) . "<p>";
+    echo "<p>Subtotal: " . number_format($Subtotal, 2) . "</p>";
+    echo "<p>Tax Amount: " . number_format($Tax, 2) . "</p>";
+    echo "<p>Total: " . number_format($Total, 2) . "</p>";
 }
 
 // main
