@@ -27,3 +27,12 @@
 ### MySQLi classes
 > $obj
 
+### File Pointers
+- Points to start of file when opened file
+- While loop until eof
+- Read first line, file pointer then points to second line, and so on
+- Moves file pointer to the end 
+- File looks at fileptr position, if at end of file marker, stop the while loop
+- File corruption: eof marker gets erased, so reads until runs out of memory
+- MySQL and php work in a similar way.
+    - Has record pointer that keeps track of position
