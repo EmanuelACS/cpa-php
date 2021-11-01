@@ -29,8 +29,10 @@ function DisplayLabel($Prompt) {
     echo "  <label>" . $Prompt . "</label>\n";
 }
 
-function DisplayTextBox($Name, $Size, $Value=0) {
-    echo "  <input type = text name = \"$Name\"  size = \"$Size\" value = \"$Value\">\n";
+function DisplayTextBox($InputType, $Name, $Size, $Value=0) {
+    // input should only be text, date, time, number
+    // if input not ... set default
+    echo "  <input type = \"$InputType\" name = \"$Name\"  size = \"$Size\" value = \"$Value\">\n";
     echo "  </br>\n";
 }
 
