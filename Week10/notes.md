@@ -72,7 +72,7 @@ class car {
 > For example, this means that each child class has to code that method
 ```
 abstract pubilc function securityCheck();  
-```
+``` 
 
 ### Modifiers
 > Protected: child has access
