@@ -30,3 +30,51 @@ class = blueprint of an object
 ### Readonly Attributes
 > Provide a public get and no set 
 > Provide a public get and private set
+
+### Inheritance
+> IsA relationship example:
+Vehicle -> Transport Truck
+Vehicle -> School Bus
+> SchoolBus IsA Vehcile
+> TransportTruck IsA Vehicle
+```
+Vehicle is the superclass/baseclass/parentclass
+Transport/Schoolbus is the subclass/derivedclass/childclass
+```
+
+#### Setup
+- Vehicle would hold all attributes+properties+methods common to all vehicles
+    - Transport would hold                  ''                trasport trucks
+    - SchoolBus would hold                  ''                school busses
+
+### Abstract keyword
+- Abstract classes -> can't create an object of the parent, just subclasses (specific)
+> Example
+```
+abstract class clsVehicle {
+    ...
+    ...
+    ...
+}
+
+class car {
+    public function __construct($pSize, $pModel, $pPrice) {
+        parent::_construct($pModel, $pPrice);
+    }
+    ...
+    ...
+    ...
+}
+```
+
+### Abstract Methods
+> For similar functions but that have different checks for each class
+> For example, this means that each child class has to code that method
+```
+abstract pubilc function securityCheck();  
+```
+
+### Modifiers
+> Protected: child has access
+> Private: only class has access
+> Public: all have access
