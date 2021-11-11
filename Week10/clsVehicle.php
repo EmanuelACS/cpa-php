@@ -21,7 +21,6 @@ class clsVehicle {
         // DO NOT 
         // $mModel = $pPrice;
         // ^ will create new variable mModel on the fly
-
     }
 
     public function __destruct() {
@@ -71,7 +70,7 @@ class clsVehicle {
     private function setMarkupPercent($pMarkupPercent=0.45) {
         // reald world: get value from a mysql table
         $pMarkupPercent = trim($pMarkupPercent);
-        if ($pMarkupPercent != NULL)
+        if ($pMarkupPercent > 0 && $pMarkupPercent < 1)
             $this->mMarkupPercent = $pMarkupPercent;
     }
 
@@ -92,9 +91,13 @@ class clsVehicle {
     public function CalculateTotal() {
         $nMarkupAmnt = $this->CalculateMarkup();
         $nSubTotal = $this->getPrice() + $nMarkupAmnt;
-        $nTaxAmnt = $this->CalculateTax();
+        $nTaxAmnt = $this->CalculateTax($nSubTotal);
         $nTotal = $nSubTotal + $nTaxAmnt;
-        return $nTotal;
+        //return "$nMarkupAmnt $nSubTotal $nTaxAmnt $nTotal";
+        
+        $arr = array($nMarkupAmnt, $nSubTotal, $nTaxAmnt, $nTotal);
+        return $arr;
+        // or create array of values and return that
     }    
 }
 ?>
