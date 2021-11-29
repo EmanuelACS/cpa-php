@@ -1,4 +1,4 @@
-## Week 12 notes
+# Week 12 notes
 - Make sure to clone date object, otherwise it becomes a copy that has the same address location (reference pointer)
 > Use: $dueDate = clone $invoiceDate; 
 
@@ -36,8 +36,8 @@ $outputString becomes
 	Born: January 2080 in the AM.
 ```
 
-### DateTime Excercises
-#### Exercise 1
+## DateTime Excercises
+### Exercise 1
 Code: 
 ```
 $someDay = new DateTime ('tomorrow 10:15am');
@@ -49,7 +49,7 @@ Output:
 someDay: November 30, 21 10:15:00AMEST
 ```
 
-#### Exercise 2
+### Exercise 2
 Code:
 ```
 // Last day of refers to the last day of the current month
@@ -61,7 +61,7 @@ Output:
 LastDayOf: November 30, 21 11:03:18amEST
 ```
 
-#### Excercise 3
+### Excercise 3
 Exercise 3
 Notice how the word at is coded. If used between single quotes, you must escape the letter a and the letter t. If you do not escape the a, php thinks you want am/pm from the displaying dates table shown earlier. If used between double quotes, escape only the letter t.
 
@@ -78,7 +78,7 @@ $outputString = "January meeting: " .
 echo $outputString ;
 ```
 
-### DateInterval Class
+## DateInterval Class
 > Represents a time period, not a date
 
 - $interval = new DateInterval('P30D');
@@ -101,8 +101,8 @@ echo $timePeriod->format('%y year and %d days');
 	displays 1 year and 4 days
 ```
 
-### DateInterval Excercises
-#### Exercise 1
+## DateInterval Excercises
+### Exercise 1
 What interval is assigned in the following examples:
 ```
 $interval1 = new DateInterval ('P1Y2M10D');		
@@ -113,13 +113,13 @@ interval1: 1yr, 2mon, 10d
 interval2: 1hr, 2min, 3sec
 ``` 
 
-#### Exercise 2
+### Exercise 2
 Code an interval to represent 4 years, 11 months, 4 days, 5 hours, 55 minutes and 18 seconds.
 ```
 $myInterval = new DateInterval ('P4Y11M4DT5H55M18S');
 ```
  	
-#### Exercise 3
+### Exercise 3
 What is the output from the following code? Include every space and punctuation mark in your answer.
 ```
 $someInterval = new DateInterval ('P3Y05M06DT17H02M08S');
@@ -134,7 +134,7 @@ echo2: + 05 months
 echo3: + 3 5 6 17 02 08 
 ```
  
-#### Exercise 4
+### Exercise 4
 Given:
 ```
 $someInterval = new DateInterval ('P3Y05M06DT17H02M08S')	
@@ -143,4 +143,46 @@ $someInterval = new DateInterval ('P3Y05M06DT17H02M08S')
 Code: 
 ```
 echo $someInterval->format ('%R%yy %mm %dd %H:%M:%S');
+```
+
+## Date and Time Arithmetic
+Example:
+```
+// Assign a due date 3 weeks from now
+$checkoutLength = new DateInterval('P3W');
+$dueDate = new DateTime();
+$dueDate->add($checkoutLength);
+
+// To determine the difference between two dates, use the diff method. 
+// It returns a date interval object that represents the amount of time between two dates.
+$interval = $datetime1->diff($datetime2);
+```
+
+## Excercises
+### Exercise 1
+Write code that uses today’s date to determine who can vote. Echo to the screen:
+> You can vote if you were born on or before <insert date here>
+
+The date should be formatted as mm/dd/yyyy with no leading zeroes. For the purpose of learning, use the sub method.
+```
+// Answer
+```
+
+### Exercise 2
+Given:
+```
+$due = new DateTime('2018-07-04 9:30:00');
+$submitted = new DateTime('2018-08-10 10:33:22');
+```
+
+Write code to display either:
+
+Assignment was on time.
+or
+Assignment was late by <number of days> days.
+
+You cannot assume the dates will be the values shown above. Hint: when formatting the number of days late, use %a not %d.
+
+```
+// Answer
 ```
