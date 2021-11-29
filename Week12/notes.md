@@ -14,7 +14,7 @@
 - date_default_timezone_set($timeZone) 
 > Sets timezone
 
-- Displaying dates examples:
+#### Displaying dates examples: 
 ![image](https://user-images.githubusercontent.com/29869696/143900271-8ecc8874-4d62-410f-889e-8c40f1202462.png)
 ```
 Example 1
