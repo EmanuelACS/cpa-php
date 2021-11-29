@@ -36,7 +36,7 @@ $outputString becomes
 	Born: January 2080 in the AM.
 ```
 
-### Excercises
+### DateTime Excercises
 #### Exercise 1
 Code: 
 ```
@@ -46,7 +46,7 @@ echo "<p>someDay: " . $someDay->format('F d, y g:i:sAT') . "</p>" ;
 Output: 
 ```
 // tomorrow 10:15am = 2021-11-30 : 10:15am
- 
+someDay: November 30, 21 10:15:00AMEST
 ```
 
 #### Exercise 2
@@ -58,5 +58,89 @@ echo "<p>LastDayOf: " . $LastDayOf->format('F d, y g:i:saT') ."</p>";
 ```
 Output: 
 ```
+LastDayOf: November 30, 21 11:03:18amEST
 ```
 
+#### Excercise 3
+Exercise 3
+Notice how the word at is coded. If used between single quotes, you must escape the letter a and the letter t. If you do not escape the a, php thinks you want am/pm from the displaying dates table shown earlier. If used between double quotes, escape only the letter t.
+
+```
+$januaryMeeting = new DateTime();
+$januaryMeeting->setDate(2050, 01, 05);
+$januaryMeeting->setTime(20, 45, 22);
+$februaryMeeting = clone $januaryMeeting;
+$februaryMeeting->modify('+1 month');
+$outputString = "January meeting: " .
+               $januaryMeeting ->format ('M. j, Y \a\t g:i a') .
+               ". February meeting: " . 
+               $februaryMeeting ->format ('M. j, Y \a\t g:i a');
+echo $outputString ;
+```
+
+### DateInterval Class
+> Represents a time period, not a date
+
+- $interval = new DateInterval('P30D');
+> a 30 day interval
+
+- You start with a dateTime obj, and then to add time to it you add dateInterval.
+
+- Examples:
+    - 'P1Y' // 1 year
+    - 'P4D', 'P1Y6M4D' 
+    - 'Pt10M'
+    - 'PT30S', 'P1Y1MT1M10S'
+> You cannot specify days and weeks in the same interval string
+
+- Formatting output
+> %R %y/Y %m/M %d/D %a %h/H %i/I %s/S %f/F
+```
+$timePeriod = new DateInterval ('P1Y4D');
+echo $timePeriod->format('%y year and %d days');
+	displays 1 year and 4 days
+```
+
+### DateInterval Excercises
+#### Exercise 1
+What interval is assigned in the following examples:
+```
+$interval1 = new DateInterval ('P1Y2M10D');		
+$interval2 = new DateInterval ('PT1H2M3S');		
+```
+```
+interval1: 1yr, 2mon, 10d
+interval2: 1hr, 2min, 3sec
+``` 
+
+#### Exercise 2
+Code an interval to represent 4 years, 11 months, 4 days, 5 hours, 55 minutes and 18 seconds.
+```
+$myInterval = new DateInterval ('P4Y11M4DT5H55M18S');
+```
+ 	
+#### Exercise 3
+What is the output from the following code? Include every space and punctuation mark in your answer.
+```
+$someInterval = new DateInterval ('P3Y05M06DT17H02M08S');
+echo $someInterval->format ('%m months, %d days');
+echo $someInterval->format ('%R %M months');
+echo $someInterval->format ('%R %y %m %d %H %I %S');
+```
+```
+//Output
+echo1: 5 months, 6 days
+echo2: + 05 months
+echo3: + 3 5 6 17 02 08 
+```
+ 
+#### Exercise 4
+Given:
+```
+$someInterval = new DateInterval ('P3Y05M06DT17H02M08S')	
+    Display   +3y 5m 6d 17:02:08
+```
+Code: 
+```
+echo $someInterval->format ('%R%yy %mm %dd %H:%M:%S');
+```
