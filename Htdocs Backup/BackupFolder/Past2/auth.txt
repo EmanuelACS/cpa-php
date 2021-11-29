@@ -1,0 +1,5 @@
+localhost
+root
+mysqlTEST!@#$%
+COMP220db
+3306

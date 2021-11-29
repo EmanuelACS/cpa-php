@@ -1,0 +1,58 @@
+input[type='number']{
+    width: 2.5em;
+} 
+
+table {
+    width: 100%;
+}
+
+table, th, td {
+  border:0.0625em solid black;
+  font-size: 1.1em;
+}
+
+td { 
+    text-align: center;
+}
+
+h1 {
+    margin-top: 0.2em;
+    color: #0039A9;
+}
+
+.DataPair {
+    background-color:#41AADE;
+    color:#0039A9;
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+    margin-left: 0.75em;
+    display: inline-block;
+    width: 18em;
+}
+
+label, p {
+    font-size: 1.2em;
+}
+
+input, select {
+    background-color: #3399FF;
+    color: black;
+    font-size: 1.2em;
+    float: right;
+}
+
+body {
+    background-color: #88D1F1;
+    font-size: 1.2em;
+}
+
+button {
+    background-color: #88D1F1;
+    border-color: #88D1F1;
+    border: 0.125em solid #88D1F1;
+}
+
+footer {
+    margin-top: 2em;
+    font-size: 1.2em;
+}

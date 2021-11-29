@@ -1,0 +1,39 @@
+h1 {
+    color: cyan;
+    font-size: x-l;
+}
+
+.DataPair {
+    background-color:black;
+    color:blanchedalmond;
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+    margin-left: 0.75em;
+}
+
+footer {
+    margin-top: 4em;
+}
+
+input[type=text], textarea {
+    background-color: blanchedalmond;
+}
+
+body {
+    background-color: white;
+}
+
+button {
+    margin-top: 2em;
+    display: block;
+    border: 0;
+    background-color: white;
+}
+
+/*
+K7M5V6
+3432-839-847-MC
+SF1204576
+D6030-22200-00911
+5189162
+*/
