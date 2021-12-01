@@ -3,7 +3,6 @@
 // clsPerson is a super class that other classes can inherit
 abstract class clsPerson
 {
-
 	public function getFirstName() 	{ return $this->firstName; }
 	public function setFirstName($pFirstName) { if ($pFirstName != NULL) $this->firstName = $pFirstName;}
 	public function getLastName() {  return $this->lastName;  }
@@ -27,7 +26,26 @@ abstract class clsPerson
 	//   You are <x> years <y> months <z> days <w> hours <q> minutes old.
 	public function calculateAge()
 	{  
-		
+		$nDob = $this->getDob()->format('m d, Y') . " at " . $this->getDob()->format('h:m:A')
+
+		$currentDate = new DateTime();
+		$currentAge = $currentDate->diff($this->getDob());
+
+		return "Born " . $nDob
+			. "<br>Today's Date: " . $currentDate->format('m d, Y')
+			. ".<br>You are " . $currentAge->format('%y years %m months %d days %h hours %m minutes old.');
 	}
+
+	clsPerson($pFirstName, $pLastName, $pDob, $pHomePhone) {
+		$this->setFirstName($pFirstName);
+		$this->setLastName($pLastName);
+		$this->setDob($pDob);
+		$this->setHomePhone($pHomePhone);
+	}
+
+	private $firstName;
+	private $lastName; 
+	private $dob;
+	private $homePhone;
 }
 ?>
