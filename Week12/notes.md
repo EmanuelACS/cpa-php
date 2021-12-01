@@ -169,7 +169,7 @@ The date should be formatted as mm/dd/yyyy with no leading zeroes. For the purpo
 $currentDate = new DateTime();
 $interval = new DateInterval('P18Y');
 $voteMin = clone $currentDate->sub($interval);
-echo "You can vote if you were born on or before" . $voteMin->format('m/d/Y');
+echo "You can vote if you were born on or before " . $voteMin->format('m/d/Y');
 ```
 
 ### Exercise 2
@@ -188,4 +188,12 @@ You cannot assume the dates will be the values shown above.
 Hint: when formatting the number of days late, use %a not %d.
 ```
 // Answer
+$due = new DateTime('2018-07-04 9:30:00');
+$submitted = new DateTime('2018-08-10 10:33:22');
+$interval = $due->diff($submitted);
+
+if ($interval->format('%R') == '-')
+    echo "Assignment was on time";
+else 
+    echo "Assignment was late by " . $interval->format('%a days.');
 ```
