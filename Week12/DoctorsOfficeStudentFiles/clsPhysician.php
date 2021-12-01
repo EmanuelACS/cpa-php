@@ -25,9 +25,17 @@ class clsPhysician extends clsPerson
 	// Doctor: <firstname> <lastname> <specialty>
 	public function produceFileFolderLabel()
 	{
-		 
-	 
+		return "Doctor: " . $this->getFirstName() 
+			. " " .	$this->getLastName() 
+			. " " . $this.getSpecialty(); 
 	}
-	
+
+	clsPhysician($pID, $pSpecialty) {
+		$this->setID($pID);
+		$this->setSpecialty($pSpecialty);
+	}
+
+	private $ID;
+	private $speciality;
 }	
 ?>
