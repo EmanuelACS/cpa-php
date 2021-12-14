@@ -1,6 +1,5 @@
 # Enhancements to Assignment1
 
-
 ### Feature 1-3
 1. Add Record (turn it into a flex layout)
     - left, content on the right

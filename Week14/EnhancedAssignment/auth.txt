@@ -1,0 +1,5 @@
+localhost
+root
+MySQL!@#$%
+COMP220db
+3306
